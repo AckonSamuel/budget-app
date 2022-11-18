@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'pages/splash_screen'
   devise_for :users
   resources :group_expenditures
   resources :groups
