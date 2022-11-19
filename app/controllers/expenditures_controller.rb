@@ -17,7 +17,7 @@ class ExpendituresController < ApplicationController
   # POST /expenditures or /expenditures.json
   def create
     expenditure = Expenditure.new(expenditure_params)
-    expenditure.user = current_user
+    expenditure.author_id = current_user.id
     if expenditure.save
       expenditure_params[:group_expenditures][:group_id].each do |id|
         expenditure.group_expenditures.create(group_id: id) unless id == ''

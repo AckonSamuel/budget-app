@@ -1,13 +1,8 @@
 class GroupsController < ApplicationController
-
+  before_action :authenticate_user!
   # GET /groups or /groups.json
   def index
     @groups = current_user.groups
-  end
-
-  # GET /groups/1 or /groups/1.json
-  def show
-    @group = Group.new
   end
 
   # GET /groups/new
@@ -15,14 +10,10 @@ class GroupsController < ApplicationController
     @group = Group.new
   end
 
-  # GET /groups/1/edit
-  def edit
-  end
-
   # POST /groups or /groups.json
   def create
     group = Group.new(group_params)
-    group.user = current_user
+    group.author_id = current_user.id
 
     if group.save
       redirect_to groups_path, notice: 'Group successfully create'
