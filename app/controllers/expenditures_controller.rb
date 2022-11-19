@@ -30,7 +30,7 @@ class ExpendituresController < ApplicationController
 
   private
 
-    def expenditure_params
-      params.require(:new_expenditure).permit(:name, :amount, group_expenditures: [group_ids: []])
-    end
+  def expenditure_params
+    params.require(:new_expenditure).permit(:name, :amount, group_expenditures: [group_ids: []])
+  end
 end

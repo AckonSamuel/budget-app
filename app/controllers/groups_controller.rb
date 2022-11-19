@@ -23,6 +23,7 @@ class GroupsController < ApplicationController
   end
 
   private
+
   def group_params
     params.require(:new_group).permit(:name, :icon)
   end
