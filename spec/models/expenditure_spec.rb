@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe Category, type: :model do
+RSpec.describe Expenditure, type: :model do
   subject do
     user = User.create(name: 'Charles', email: 'okoyecharles509@gmail.com', password: 'qwerty', confirmed_at: Time.now)
-    Category.new(author_id: user.id, name: 'Foods', icon: 'burger.jpg')
+    Expenditure.new(name: 'Burger', user_id: user.id, amount: 100)
   end
 
   it 'is valid with valid attributes' do
@@ -15,8 +15,8 @@ RSpec.describe Category, type: :model do
     expect(subject).to_not be_valid
   end
 
-  it 'is not valid without an icon' do
-    subject.icon = nil
+  it 'is not valid with amount less than zero' do
+    subject.amount = -1
     expect(subject).to_not be_valid
   end
 end
