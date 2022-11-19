@@ -16,10 +16,10 @@ class ExpendituresController < ApplicationController
 
   # POST /expenditures or /expenditures.json
   def create
-    expenditure = Expenditure.new(expenditure_params)
-    expenditure.author_id = current_user.id
+    expenditure = Expenditure.new(expenditure_params.except(:group_expenditures))
+    expenditure.user_id = current_user.id
     if expenditure.save
-      expenditure_params[:group_expenditures][:group_id].each do |id|
+      expenditure_params[:group_expenditures][:group_ids].each do |id|
         expenditure.group_expenditures.create(group_id: id) unless id == ''
       end
       redirect_to groups_path, notice: 'Expenditures recorded successfully'
@@ -31,6 +31,6 @@ class ExpendituresController < ApplicationController
   private
 
     def expenditure_params
-      params.require(:new_expenditure).permit(:name, :amount, group_expenditures: [group_id: []])
+      params.require(:new_expenditure).permit(:name, :amount, group_expenditures: [group_ids: []])
     end
 end

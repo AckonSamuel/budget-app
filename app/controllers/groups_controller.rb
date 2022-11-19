@@ -13,7 +13,7 @@ class GroupsController < ApplicationController
   # POST /groups or /groups.json
   def create
     group = Group.new(group_params)
-    group.author_id = current_user.id
+    group.user_id = current_user.id
 
     if group.save
       redirect_to groups_path, notice: 'Group successfully create'

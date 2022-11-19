@@ -1,5 +1,5 @@
 class Expenditure < ApplicationRecord
-    belongs_to :user, class_name: 'User', foreign_key: 'author_id'
+    belongs_to :user, class_name: 'User', foreign_key: 'user_id'
     has_many :group_expenditures, class_name: 'GroupExpenditure', foreign_key: 'expenditure_id'
     has_many :groups, through: :group_expenditures
 

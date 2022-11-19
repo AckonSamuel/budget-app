@@ -10,9 +10,9 @@
   </div>
   
   <div>
-    <%= f.fields_for :group_payments do |cp| %>
+    <%= f.fields_for :group_expenditures do |cp| %>
       <%= cp.label :group_ids, ' (atleast one)', class: 'form-label' %> <br>
-      <%= cp.collection_select :group_ids, @all_categories, :id, :name, {}, { multiple: true, required: true, class: 'form-select', size: 2 } %>
+      <%= cp.collection_select :group_ids, @all_expenditures, :id, :name, {}, { multiple: true, required: true, class: 'form-select', size: 2 } %>
     <% end %>
   </div>
 

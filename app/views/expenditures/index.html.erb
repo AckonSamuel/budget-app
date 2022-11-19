@@ -1,7 +1,7 @@
 <section>
   <h2 class="text-center">Expenditures</h2>
   <div class="text-secondary text-center">Group - <%= @group.name %></div>
-  <p>Total price: $<%= @group.total_price %></p>
+  <p>Total price: $<%= @group.total_expenditures %></p>
   <% unless @expenditures.empty? %>
     <%= render expenditure %>
   <% else %>
