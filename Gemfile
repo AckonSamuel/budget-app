@@ -79,4 +79,3 @@ gem 'devise'
 
 # rubocop for linting during development
 gem 'rubocop', '>= 1.0', '< 2.0'
-
