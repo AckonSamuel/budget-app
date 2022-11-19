@@ -3,7 +3,7 @@
   <div class="text-secondary text-center">Group - <%= @group.name %></div>
   <p>Total price: $<%= @group.total_expenditures %></p>
   <% unless @expenditures.empty? %>
-    <%= render expenditure %>
+    <%= render 'expenditure' %>
   <% else %>
     <p>No expenditure available</p>
   <% end %>
