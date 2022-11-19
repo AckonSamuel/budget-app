@@ -80,4 +80,3 @@ gem 'devise'
 # rubocop for linting during development
 gem 'rubocop', '>= 1.0', '< 2.0'
 
-gem 'ffi', github: 'ffi/ffi', submodules: true
