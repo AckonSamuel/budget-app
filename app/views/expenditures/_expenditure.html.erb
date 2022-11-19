@@ -1,2 +1,8 @@
-<div id="<%= dom_id expenditure %>">
-</div>
+<ul class="d-flex flex-column gap-4">
+  <% @expenditures.each do |expenditure| %>
+    <li class="border border-light shadow-sm rounded p-3 d-flex justify-content-between">
+      <span><%= expenditure.name %></span>
+      <span>$<%= expenditure.amount %></span>
+    </li>
+  <% end %>
+</ul>

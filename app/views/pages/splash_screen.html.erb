@@ -1,2 +1,5 @@
-<h1>Pages#splash_screen</h1>
-<p>Find me in app/views/pages/splash_screen.html.erb</p>
+<section class="d-flex flex-column">
+  <h1 class="m-auto">Money under watch</h1>
+  <%= link_to 'LOG IN', new_user_session_path, class: 'btn bg-pri text-light mb-3' %>
+  <%= link_to 'SIGN UP', new_user_registration_path, class: 'btn text-secondary' %>
+</section>

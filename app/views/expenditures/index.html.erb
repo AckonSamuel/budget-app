@@ -1,14 +1,11 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Expenditures</h1>
-
-<div id="expenditures">
-  <% @expenditures.each do |expenditure| %>
+<section>
+  <h2 class="text-center">Expenditures</h2>
+  <div class="text-secondary text-center">Group - <%= @group.name %></div>
+  <p>Total price: $<%= @group.total_price %></p>
+  <% unless @expenditures.empty? %>
     <%= render expenditure %>
-    <p>
-      <%= link_to "Show this expenditure", expenditure %>
-    </p>
+  <% else %>
+    <p>No expenditure available</p>
   <% end %>
-</div>
-
-<%= link_to "New expenditure", new_expenditure_path %>
+  <%= link_to 'Add a new payment', new_expenditure_path, class: 'btn bg-sec w-100 text-light' %>
+</section>
