@@ -9,7 +9,7 @@
 
 ## Live demo
 
-[Live link](Coming soon...)
+[Live link](https://moneywatcher.fly.dev/)
 
 ## Getting Started
 
