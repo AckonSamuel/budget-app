@@ -1,0 +1,14 @@
+require 'rails_helper'
+
+RSpec.describe GroupExpenditure, type: :model do
+  subject do
+    user = User.create(name: 'Charles', email: 'okoyecharles509@gmail.com', password: 'qwerty', confirmed_at: Time.now)
+    group = Group.create(user_id: user.id, name: 'Foods', icon: 'burger.jpg')
+    expenditure = Expenditure.create(name: 'Burger', user_id: user.id, amount: 100)
+    GroupExpenditure.new(group_id: category.id, expenditure_id: payment.id)
+  end
+
+  it 'is valid with valid attributes' do
+    expect(subject).to be_valid
+  end
+end
