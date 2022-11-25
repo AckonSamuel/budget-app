@@ -1,0 +1,11 @@
+<section>
+  <h2 class="text-center">Expenditures</h2>
+  <div class="text-secondary text-center">Group - <%= @group.name %></div>
+  <p>Total price: $<%= @group.total_expenditures %></p>
+  <% unless @expenditures.empty? %>
+    <%= render 'expenditure' %>
+  <% else %>
+    <p>No expenditure available</p>
+  <% end %>
+  <%= link_to 'Add a new payment', new_expenditure_path, class: 'btn bg-sec w-100 text-light' %>
+</section>
